@@ -70,7 +70,7 @@ Send them to [Mike Kinsman](mailto:mikki@microsoft.com) and [Laurent Bugnion](lb
 
 # [Microsoft Ignite 2025](https://ignite.microsoft.com)
 
-## 🔥BRKXXX: Building collaborative agents in Microsoft Teams with Teams AI Library
+## 🔥LAB590: Building collaborative agents in Microsoft Teams with Teams AI Library
 
 [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
 [![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=adff2f&logoColor=fff)](https://aka.ms/foundry/forum)
@@ -83,9 +83,9 @@ Send them to [Mike Kinsman](mailto:mikki@microsoft.com) and [Laurent Bugnion](lb
 
 By the end of this session, learners will be able to:
 
--  
--
--
+- Create an agent for Teams using the Teams CLI included in the Teams AI Library
+- Deploy new agent to Teams using the M365 Agents Toolkit
+- Utilize advanced orchestartion features like A2A & MCP
 
 ### 💻 Technologies Used
 
@@ -120,10 +120,10 @@ For more information, setup instructions for other dev clients, and to post comm
 
 <table>
 <tr>
-    <td align="center"><a href="http://github.com/mikekinsman">
-        <img src="https://github.com/mikekinsman.png" width="100px;" alt="INSERT NAME HERE"
+    <td align="center"><a href="https://github.com/MSFTRickyCastaneda">
+        <img src="https://github.com/MSFTRickyCastaneda.png" width="100px;" alt="Ricky Castaneda"
 "/><br />
-        <sub><b> INSERT NAME HERE
+        <sub><b> Ricky Castaneda
 </b></sub></a><br />
             <a href="https://github.com/mikekinsman" title="talk">📢</a> 
     </td>
