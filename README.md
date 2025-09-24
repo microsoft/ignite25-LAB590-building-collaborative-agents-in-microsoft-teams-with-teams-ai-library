@@ -77,7 +77,9 @@ Send them to [Mike Kinsman](mailto:mikki@microsoft.com) and [Laurent Bugnion](lb
 
 ### Session Description
 
-*Add Session Description*
+You’ve built a great agent that your customers love—now it’s time to scale. By bringing your agent to Microsoft Teams with the Teams AI Library, you can reach 330 million users and unlock rich collaborative experiences across chats, meetings, and channels. 
+ 
+Whether you're an AI startup ready to engage enterprise customers or an internal team expanding productivity across your organization, this lab will show you how to migrate your agent from other platforms to Teams and tap into powerful new AI capabilities like agent-to-agent communication (A2A) and model context protocol (MCP). Empower your agent to thrive where your users already work—on Microsoft Teams.
 
 ### 🧠 Learning Outcomes
 
@@ -89,9 +91,11 @@ By the end of this session, learners will be able to:
 
 ### 💻 Technologies Used
 
-1.
-1.
-1.
+1. Teams AI Library
+1. VS Code
+1. Azure AI Foundry
+1. MCP / A2A
+1. M365 Agents Toolkit
 
 ### 🌟 Microsoft Learn MCP Server
 
@@ -113,11 +117,6 @@ For more information, setup instructions for other dev clients, and to post comm
 
 ## Content Owners
 
-<!-- TODO: Add yourself as a content owner
-1. Change the src in the image tag to {your github url}.png
-2. Change INSERT NAME HERE to your name
-3. Change the github url in the final href to your url. -->
-
 <table>
 <tr>
     <td align="center"><a href="https://github.com/MSFTRickyCastaneda">
@@ -125,14 +124,14 @@ For more information, setup instructions for other dev clients, and to post comm
 "/><br />
         <sub><b> Ricky Castaneda
 </b></sub></a><br />
-            <a href="https://github.com/mikekinsman" title="talk">📢</a> 
+            <a href="https://github.com/MSFTRickyCastaneda" title="talk">📢</a> 
     </td>
-    <td align="center"><a href="http://github.com/mikekinsman">
-        <img src="https://github.com/mikekinsman.png" width="100px;" alt="INSERT NAME HERE
+    <td align="center"><a href="https://github.com/ryanbliss">
+        <img src="https://github.com/ryanbliss.png" width="100px;" alt="INSERT NAME HERE
 "/><br />
         <sub><b>INSERT NAME HERE
 </b></sub></a><br />
-            <a href="https://github.com/mikekinsman" title="talk">📢</a> 
+            <a href="https://github.com/ryanbliss" title="talk">📢</a> 
     </td>
 </tr></table>
 
