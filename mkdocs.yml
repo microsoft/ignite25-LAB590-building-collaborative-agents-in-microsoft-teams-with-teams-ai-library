@@ -19,15 +19,15 @@
 
 
 # Project information .........................................
-site_name: "Session Title"
-site_url: 
-site_author: Content Creator
+site_name: "LAB590: Building collaborative agents in Microsoft Teams with Teams AI Library"
+site_url: https://labondemand.com/LTI/Launch/198128
+site_author: Ricky Castaneda
 site_description: >-
-  Demo mkdocs for Ignite Repos
+  You’ve built a great agent that your customers love—now it’s time to scale. By bringing your agent to Microsoft Teams with the Teams AI Library v2, you can reach 330 million users and unlock rich collaborative experiences across chats, meetings, and channels.
 
 # Repository ..................................................
-repo_name: microsoft/Ignite25-Repo-Template
-repo_url: https://github.com/microsoft/Ignite25-Repo-Template
+repo_name: microsoft/ignite25-LAB590-building-collaborative-agents-in-microsoft-teams-with-teams-ai-library
+repo_url: https://github.com/microsoft/ignite25-LAB590-building-collaborative-agents-in-microsoft-teams-with-teams-ai-library
 
 # Copyright ...................................................
 copyright: >
