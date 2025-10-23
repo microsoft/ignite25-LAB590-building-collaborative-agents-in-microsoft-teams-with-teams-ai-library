@@ -1,26 +1,3 @@
-
-
-## Update the badges!
-
-1. if the foundry discord and github links aren't appropriate for your session you can remove or change them.
-2. See shields.io for how to build your own dynamic or static badge for your community destinations, or other sample repos for how they've done
-3. Please limit your repo to one row of badges under the session title.
-
-
-## Update this readme below
-
-1. Fill out the content in this file, below the banner graphic, including the session code.
-2. Please embed links to Learn with your campaign codes!
-3. Add resources for your session to the Resources and Next Steps table
-4. Change the Content Owner section to your info
-5. Change the placeholder session code BRKXXX to your session code.
-
-
-## Finished?
-
-- Remove the folders that you don't need or didn't use, *please don't leave them empty with placeholder readmes*
-- Delete this line and everything above it!
-
 <p align="center">
 <img src="img/Banner-ignite-25.png" alt="decorative banner" width="1200"/>
 </p>
@@ -48,7 +25,7 @@ By the end of this session, learners will be able to:
 - Become familiar with the debugging and developer tools available to test your agent
 - Deploy a new agent to Teams using the M365 Agents Toolkit
 - Setup and deploy AI resources with the Azure AI Foundry
-- Utilize advanced orchestartion features like MCP
+- Utilize advanced orchestration features like MCP
 
 ### 💻 Technologies Used
 
@@ -75,6 +52,9 @@ For more information, setup instructions for other dev clients, and to post comm
 |:-------------------|:----------------------------------|:-------------------|
 | Ignite 2025 Next Steps | [https://aka.ms/Ignite25-Next-Steps](https://aka.ms/Ignite25-Next-Steps?ocid=ignite25_nextsteps_cnl) | Links to all repos for AI Tour 26 Sessions |
 | Azure AI Foundry Community Discord | [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)| Connect with the Azure AI Foundry Community! |
+| Microsoft Teams SDK Learn Docs | [Microsoft Teams SDK Learn Docs](https://learn.microsoft.com/en-us/microsoftteams/platform/teams-ai-library/) | The official documenation page of the Microsoft Teams SDK |
+| Microsoft 365 Agents Toolkit | [Microsoft 365 Agents Toolkit](https://learn.microsoft.com/en-us/microsoft-365/developer/overview-m365-agents-toolkit) | Check out the doc pages for Microsoft 365 Agents Toolkit |
+| Unleashing the Power of MCP | [Unleashing the Power of MCP](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564) | Continue Learn more about MCP and how it can power your agents |
 | Learn at Ignite | [https://aka.ms/LearnAtIgnite](https://aka.ms/LearnAtIgnite?ocid=ignite25_nextsteps_github_cnl) | Continue learning on Microsoft Learn |
 
 ## Content Owners
@@ -88,12 +68,12 @@ For more information, setup instructions for other dev clients, and to post comm
 </b></sub></a><br />
             <a href="https://github.com/MSFTRickyCastaneda" title="talk">📢</a> 
     </td>
-    <td align="center"><a href="https://github.com/ryanbliss">
-        <img src="https://github.com/ryanbliss.png" width="100px;" alt="Ryan Bliss
+    <td align="center"><a href="https://www.linkedin.com/in/panand86/">
+        <img src="https://media.licdn.com/dms/image/v2/C4E03AQFL1WyoiyOr9g/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1517741376132?e=1762992000&v=beta&t=B_JapTRSEtgWdaRtOpVoSd7okPh3qNUW39uU-3VBxNI" width="100px;" alt="Prem Mathiyalagan
 "/><br />
-        <sub><b>Ryan Bliss
+        <sub><b>Prem Mathiyalagan
 </b></sub></a><br />
-            <a href="https://github.com/ryanbliss" title="talk">📢</a> 
+           
     </td>
 </tr></table>
 

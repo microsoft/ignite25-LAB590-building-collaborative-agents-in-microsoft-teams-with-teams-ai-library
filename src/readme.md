@@ -1,2 +1,2 @@
 ## Source Code
-The source code for the Tech Support agent used in LAB590 is in the folder named 'Tech-Support-Agent'
+the folder above named "Tech-Support-Agent" contains all of the code used to created the Tech Support agent in LAB590: Building collaborative agents in Teams with Teams AI Library. This folder can be copied and ran locally using Microsoft 365 Agents Toolkit. 

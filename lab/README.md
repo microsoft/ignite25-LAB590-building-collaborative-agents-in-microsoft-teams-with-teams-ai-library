@@ -1,6 +1,4 @@
 
-@lab.Title
-
 ---
 # Create Your First Agent
 >  **Teams AI Library** is designed to enhance developer experience with streamlined integrations and accelerated workflows. 
@@ -12,8 +10,8 @@ This lab will help you:
 - Create an Agent in 30 seconds using CLI.
 - Run code and see Teams and AI integrations.
 - Test your agent with DevTools and Microsoft Teams.
-- Integreate with advanced orchestration tools like MCP
-- Launch and deploy an Azure OpenAI Foundry Model and use it to power your agent
+- Integrate with advanced orchestration tools like MCP
+- Launch and deploy an Azure OpenAI Foundry Model and use it to power your agent.
 
 ---
 ## Lab Breakdown
@@ -21,16 +19,16 @@ This lab is divided into 4 sections:
 - Part 1 > Build your Agent in 30 Seconds
 - Part 2 > Explore DevTools
 - Part 3 > AI Foundry Resources Setup
-- Part 4 > Connect Tech Support agent to Foundry Resources
-- PArt 5 > Add advanced orchestration with MCP
+- Part 4 > Connect Tech Support Agent to Azure OpenAI
+- Part 5 > Add Advanced Orchestration (via the Model Context Protocol)
 
 ---
-**Please proceed to the next section.** (Navigation aids are at bottom right)
+**Please proceed to the next section.** (Navigation aids are at the bottom right)
 
 ---
 >[!note] This lab is written in Typescript. No prior knowledge is needed. Teams AI Library is also available in .NET and Python. 
 
->[!help]**If you are stuck in any part of the lab please ask a proctor for help.** 
+>[!help]**If you are stuck in any part of the lab, please raise your hand to ask a proctor for help.** 
 
 ===
 
@@ -43,11 +41,17 @@ In this first part, you'll learn the basics of creating an application, understa
 
 1. [] Login with the following **Password**: +++@lab.VirtualMachine(Win11-Pro-Base).Password+++
 
-2. [] **Left** click **twice** on **Visual Studio Code**. 
+2. [] On the desktop, **left** click **twice** on **Visual Studio Code**. 
 
 > [!knowledge] The Teams CLI is a command-line tool that helps you create, manage, and deploy Teams applications. It provides a set of commands to simplify the development process. 
 
 3. [] Open the terminal and install the **Teams CLI** globally using npm
+
+> [+] Steps to open a new terminal:
+> 1. On the top toolbar, click the button with three dots ("..."). 
+> 2. Hover over "Terminal", and click "New Terminal". 
+> !IMAGE[terminal.jpg](instructions310568/terminal.jpg)
+
 ```
 npm install -g @microsoft/teams.cli
 ```
@@ -63,33 +67,36 @@ Notice that this command:
 
 ---
 
-5. [] Navigate to your agent's directory
+5. [] In your terminal, navigate to your agent's directory
 ```
 cd quote-agent
 ```
-6. [] Install the dependencies
+6. [] In your terminal, install the dependencies
 ```
 npm install
 ```
 
-7. [] Start the development server
+7. [] In your terminal, start the development server
 ```
 npm run dev
 ```
+Your terminal should look something like this:
+!IMAGE[terminal-echo.jpg](instructions310568/terminal-echo.jpg)
 
 > [!alert] You may encounter Windows Defender Firewall pop-ups for Visual Studio Code and Node.JS. Click "Allow access".
 
 Notice that when the application starts, you'll see:
 
-- A http server starting up. (port 3000) (This is the main server which handles incoming requests and serves the agent application.)
-- A devtools server starting up. (port 3001) This is a developer server that provides a web interface for debugging and testing your agent quickly, without having to deploy it to Teams.
+- An **HTTP server** starting up. (port 3978) This is the main server which handles incoming requests and serves the agent application.
+- A **DevTools server** starting up. (port 3979) This is a developer server that provides a web interface for debugging and testing your agent quickly, without having to deploy it to Teams.
 
 ---
 Send the Agent a message:
-8. [] Navigate to the devtools server by clicking the link from the console. 
+8. [] Navigate to DevTools by clicking the link from the console. 
 You can do this by holding **Ctrl** on your keyboard and **clicking** with your mouse. You should see a simple interface where you can interact with your agent.
 
 9. [] Send it a message and watch it echo back!
+!IMAGE[devtools-echo.jpg](instructions310568/devtools-echo.jpg)
 
 ---
 Congrats, you just made your agent in 30 seconds! :tada:
@@ -101,7 +108,7 @@ Congrats, you just made your agent in 30 seconds! :tada:
 
 ## Exercise 2: Explore DevTools
 
-> One of the main motivations for Teams AI Library is to provide excellent tools that simplify and speed up building and testing agents. Because of this, we created the CLI for speedy agent initiation and project management, and DevTools as an accessible way to test your agent's behavior without jumping through deployment hoops. DevTools also provides crucial insight on activity payloads on the Activities page.
+> One of the main motivations for Teams AI Library is to provide excellent tools that simplify and speed up building and testing agents. Because of this, we created the **CLI** for speedy agent initiation and project management, and **DevTools** as an accessible way to test your agent's behavior without jumping through deployment hoops. DevTools also provides crucial insight on activity payloads on the Activities page.
 
 > [!knowledge] The developer tools can be used to locally interact with an app to streamline the testing/development process, preventing you from needing to deploy/register the app or expose a public endpoint.
 
@@ -112,13 +119,15 @@ Let's start by examining the chat.
 > The chat window emulates Teams features as closely as possible. Not all Teams features are available in DevTools, but we are working to add more features over time.
 1. [] Send a message in the **compose box**. The agent should echo back.
 2. [] **Hover** over the agent's message to react to the message.
+!IMAGE[reactions.jpg](instructions310568/reactions.jpg)
 3. [] Hover over your own message. Edit your message by selecting the **Edit** (pencil) icon from the message actions menu. Press **Enter** or the checkmark button to send the edited message, or the **Dismiss** (X) button to cancel.
 4. [] Hover over your own message. Soft delete your message by pressing the **More** (ellipsis) button, then the **Delete** (trash) button. Click "**Undo**" to restore the message.
 5. [] Check your **app connectivity** - the DevTools banner shows a green badge or 'Connected' text when connected, and red or 'Disconnected' when not.
-6. [] Next, hover over the **search icon**, and let's examine the activity. Click the button.
+6. [] Next, hover over the **search icon** on the message, and let's examine this specific activity. Click the button.
 
 ---
 ### Inspect Activities
+!IMAGE[activities-inspection.jpg](instructions310568/activities-inspection.jpg)
 1. [] Select an activity in the left grid, this opens a detailed view in Preview mode, showing the full payload as a tree with expandable and collapsible sections.
 2. [ ] Toggle from "**Preview**" to "**JSON**" under the "Activity details" header to see the raw JSON payload.
 3. [ ] Press the Copy button in the top left corner of the Activity details view to copy the payload to your clipboard.
@@ -127,26 +136,27 @@ Let's start by examining the chat.
 ---
 
 Awesome, now that you're warmed up with our tools, let's dive into our agent.
-1. [] Close the DevTools browser, and make sure to kill the terminal by clicking on the trash button before proceeding to the next exercise.
+1. [] Close the DevTools browser, and make sure to kill the terminal by holding CTRL+C on the keyboard. This will kill the entire program, please do this before proceeding to the next exercise.
 
 ---
 Go ahead and close DevTools and close your Visual Studio Code window.
 
-**Please proceed to the next section.** (Navigation aids are at bottom right)
+**Please proceed to the next section.** (Navigation aids are at the bottom right)
 ===
 
-## Exercise 3: AI Foundry Resource Setup
+## Exercise 3: Setting Up AOAI on AI Foundry
 
-For today, we're going to be working with our **Tech Support Agent**.
+Today, we're going to be working with a **Tech Support Agent**.
 
-> The Tech Support Agent helps employees answer general tech-related questions and more importantly, help users order new laptops. Like most agents, intelligence is key here. The agent can recommend certain laptops based on user needs and help you place an order for a laptop all using conversational based AI. This example uses a RAG service to store laptop information and uses that to help guide and place orders for users. 
+> The Tech Support Agent helps employees answer general tech-related questions and more importantly, help users order new laptops. Like most agents, intelligence is key here. The agent can recommend certain laptops based on user needs and help you place an order for a laptop all using conversational-based AI. This example uses a RAG service to store laptop information and uses that to help guide and place orders for users. 
 
 >[!knowledge] The Tech Support agent is built with the Teams AI Library and shows how easy it is to use activity handlers, dialogs, adaptive cards, and AI to create a fun, interactive agent with just a few building blocks.
 
 ### Step 1: Get your Azure AI Foundry Keys
+>[!knowledge] We will be using Azure AI Foundry to deploy an Azure OpenAI gpt-4o model.
 
 ---
-1. [] Open the Microsoft Edge from the desktop, copy and paste the link to navigate to +++https://ai.azure.com/resources+++. Make sure this opens **inside** of your VM.
+1. [] Open the Microsoft Edge from the desktop. Copy and paste the link to navigate to +++https://ai.azure.com/resources+++. Make sure this opens **inside** of your VM.
 
 2. [] You will be requested to sign in. Open this lab's **Resources** tab, and sign in with the provided **Username** and **Tap (Temporary Access Pass)**.
 > [!warning] If you are stuck in a sign in loop, try reopening the link. 
@@ -157,12 +167,15 @@ For today, we're going to be working with our **Tech Support Agent**.
 !IMAGE[IMG8082.png](instructions310568/IMG8082.png)
 
 ---
-4. [] You can name your project anything you like, just remember we will have to use this name later. Click **Create**
-5. [] You should now see a screen similar to this, deployment of your resources will take a few minutes. 
+4. [] In the project name field, delete the last 5 characters, they should look like "-XXXX". Keep the other auto-populated fields the same. Click **Create**
+!IMAGE[remove-last-4.png](instructions310568/remove-last-4.png)
+6. [] You should now see a screen similar to this, deployment of your resources will take a few minutes. 
 
 !IMAGE[img8000.png](instructions310568/img8000.png)
 
 ### Step 2: Launch Teams in Edge
+
+---
 
 1. [] While we wait, let's launch Teams for the first time in the browser, this will help speed things up later in the lab. Open a new tab in Edge and navigate to **teams.microsoft.com**
 2. [] Select **Start trial**
@@ -170,8 +183,9 @@ For today, we're going to be working with our **Tech Support Agent**.
 ### Step 3: Deploy gpt-4o
 
 ---
-1. [] Your Azure AI Foundry resources should be up and running, head back to the Azure AI Foundry tab
-2. [] In the left menu you should see a section called **My assets**, click on **Models + Endponts** 
+1. [] Your Azure AI Foundry resources should be up and running, head back to the **Azure AI Foundry** tab
+2. [] In the left menu, if you scroll down, you should see a section called **My assets**, click on **Models + Endponts** 
+!IMAGE[models-endpoints.jpg](instructions310568/models-endpoints.jpg)
 3. [] Click on **Deploy Model**, and select **Deploy Base Model**
 4. [] Choose **gpt-4o** and click **Confirm**, then **Deploy** Your deployment page should look like this: 
 
@@ -181,40 +195,40 @@ For today, we're going to be working with our **Tech Support Agent**.
 
 !IMAGE[gpt-4o api key.png](instructions310568/gpt-4o api key.png)
 
-6. [] You can close the Teams tab you opened earlier, check if any tool tips have come up and dismiss them first. Make sure to keep your Foundry tab open
+6. [] You can close the Teams tab you opened earlier, check if any tool tips have come up and dismiss them first. Make sure to keep your Foundry tab open.
 
 ---
 **Please proceed to the next section.** 
 ===
-## Exercise 4: Connect Tech Support agent to your Azure AI Foundry resource
-In this section, we'll take the endpoint and key created in your Azure AI Foundry resource, and use it to power our Tech Support Agent
+## Exercise 4: Connect Tech Support Agent to Azure Open AI
+In this section, we'll take the model created in Azure AI Foundry, and use it to power our Tech Support Agent!
 
-### Step 1: Add your resource keys
+### Step 1: Adding Credentials
 
 ---
 1. [] From the desktop, open **Visual Studio Code**.
-2. [] In VS Code, select **File** and **Open folder**
+2. [] In VSC, select **File** and **Open folder**
 3. [] Navigate to **C:/Users/LabUser/Ignite2025** and choose **Select Folder**
-4. [] Feel free to look around the code, this is the pre-built tech-support agent. You can see the functionality in the **src** folder.
+4. [] Feel free to look around the code, this is the pre-built tech-support agent. Most of the core functionality is in the **src** folder.
 5. [] Open the **.env** file and set the values from your Azure AI Foundry Resource (Key, API Version) from Step 6 in the following way: 
 
-> [!knowledge] Your API key is listed as "Key" on the Azure AI Foundry deployment page, your API version is listed at the end of the Target URI
+> [!knowledge] Your API key is listed as "Key" on the Azure AI Foundry deployment page, your API version is listed at the end of the Target URI (hover over to see)
 
-The file should look something like this:git lo
+The file should look something like this:
 
 ```
 PORT=3978 
 CLIENT_ID=  
 CLIENT_SECRET=  
-AOI_KEY=*SECRET REDACTED*
+AOI_KEY=
 AOI_MODEL=gpt-4o
-AOI_API_VERSION=2024-12-01-previewgit 
+AOI_API_VERSION=2024-12-01-preview
 ```
 > [!alert] Do not copy the code above into your project, these keys are placeholders and will not work
 
-6. [] Next we need to add our URI to the project. In VS Code navigate to **index.ts**
+6. [] Next we need to add our URI to the project. In VSC, navigate to **src/index.ts**
 7. [] Go to **Line 279** you should see a comment 'REPLACE ME WITH YOUR ENDPOINT / URI FROM FOUNDRY'
-8. [] Copy your URI from Azure AI Foundry and replace the comment with the URI. Remember to include quotations since this is a string 
+8. [] Copy your URI from Azure AI Foundry and replace the comment with the URI. Remember to include quotations since this is a string.
 
 It should look something like this: 
 
@@ -245,14 +259,19 @@ This will kickstart the M365 Agent Toolkit process of provisioning the required 
 
 4. [] In this step, another web browser will open, and you will be asked to provide Microsoft credentials again. Simply provide the same credentials.
 
-5. [] Voila! Click to "**Add**" or "**Open**" the agent.
+5. [] Voila! On Teams, click to "**Add**" and then **Open** the agent.
+!IMAGE[i00y9mhz.jpg](instructions310568/i00y9mhz.jpg)
 
-> [!alert] If this page does not open up for you call a proctor to help you
+> [+] Manual Sideload Instructions 
+> 1. [] Find out where your bundle zip lives. This should be in **IGNITE2025** -> **appPackage** -> **build** -> **appPackage.local.zip**. Make sure this zip file is there by navigating to it from FileExplorer. 
+> 2. [] Open **Teams browser**, go to **Apps** on the sidebar, then **Manage your apps**, and click **Upload an app > Upload a custom app**. Upload this ZIP. You will now see the add screen from 4.  
+
+> [!alert] If this page does not open up for you, please raise your hand for help.
 
 ### Step 3: Interact with the Tech Support Agent
 
 ---
-1. [] Start the conversation with a simple +++hello+++, you should receive an adaptive card asking you how the agent can help
+1. [] Start the conversation with a simple +++hello+++, you should receive an adaptive card asking you how the agent can help.
 
 >[!knowledge] Adaptive cards are great ways to engage users and help provide or collect information in an organized way
 
@@ -264,7 +283,8 @@ This will kickstart the M365 Agent Toolkit process of provisioning the required 
 
 Your agent is up and running and is being powered by Azure AI Foundry resources! Congrats! :tada:
 
-5. [] Before moving on to the next sessions, let's properly terminate our current debug session. Start by opening VS Code and clicking the disconnect button toward the top of the screen. 
+5. [] Before moving on to the next sessions, let's properly terminate our current debug session. Start by opening VSC
+6. [ ]  and clicking the disconnect button toward the top of the screen. 
 
 !IMAGE[disconnect.png](instructions310568/disconnect.png)
 
@@ -276,75 +296,81 @@ Let's dive a little deeper and add some MCP functionality.
 
 ---
 
-**Please proceed to the next section.** (Navigation aids are at bottom right)
+**Please proceed to the next section.** (Navigation aids are at the bottom right)
 ===
 
-## Exercise 5: Add Advanced Orchestration (MCP)
+## Exercise 5: Add Advanced Orchestration (via the Model Context Protocol)
 
-In this exercise we're going to position our tech support agent as an MCP client that utilizes an external resources to approve / deny purchase orders for laptops. This service will take in purchase order details and either:
+In this exercise, we're going to position our **Tech Support Agent** as an **MCP Client** that utilizes external resources to approve / deny purchase orders for laptops. This service will take in purchase order details and either:
 1. Approve the claim and return a full purchase amount (The MSRP + 10% and 15$) and a tracking number
 2. Deny the claim with reason
-Let's add the MCP client code and see if we can get the agnent to approve or deny our claim. 
 
-The MCP server has been pre-built and setup, in this case, much of the code you use would be the same, just with the URL of the MCP server you are using and your own MCP key. 
+Let's convert our agent into an MCP client, and see if we can get the agent to approve or deny our claim. 
 
-In part 8 of step #1, you will be able to see much of the logic and tools the MCP server has made available to the agent. Thes logs come from part 3 of step #1, adding a logger to the MCP client on our agent. 
+> [!help] The MCP server has been configured prior to this lab. Much of the code will be the same, just with the URL of the MCP server you are using and your own MCP key. 
 
-### Step 1: Add an MCP Client
+> [!note] In Part 8.1, you will see much of the logic and tools the MCP server has made available to the agent. These logs come from Part 3.1, when we add a logger to the MCP Client. 
 
-1. [] On the terminal, install the **MCP Client Package** via 
-`npm i @microsoft/teams.mcpclient`
+---
 
-2. [] At the top of the **index.ts** file at **line 11** replace the comment this this import statement to import the library 
+### Step 1: Convert Agent to MCP Client
+
+<!-- 1. [] On the terminal, install the **MCP Client Package** via 
+`npm i @microsoft/teams.mcpclient` -->
+
+1. [] At the top of the **index.ts** file at **line 11**, replace the comment with this import
 `import { McpClientPlugin } from '@microsoft/teams.mcpclient';`
 
-3. [] At **line 262** just before the chatprompt, replace the comment with a new console logger so we can see the MCP in action later: 
+2. [] At **line 262**, just before the Chat Prompt declaration, replace the comment with a new ConsoleLogger, so we can see the MCP in action later: 
 ```const logger = new ConsoleLogger('mcp-client', {level: 'debug'});```
 
-3. [] Navigate to the **index.ts** file. Scroll to **Line 285**. In the **ChatPrompt** declaration, add 
+3. [] Scroll to **Line 285**. Replace the whole line with: 
 ``` [new McpClientPlugin({logger})],)``` 
 
 
-4. [] At the end of the **ChatPrompt** on **line 287** replace the comment with the snip below.
+4. [] At the end of the **ChatPrompt** on **line 287**, replace the comment with the snip below.
 ```.usePlugin("mcpClient", {
 url: process.env.MCP_ENDPOINT!,
-   params: {
-      headers: {
+	params: {
+		headers: {
 "x-functions-key": process.env.MCP_KEY!
-      }
-   }
+		}
+	}
 })```
 
 Your code should look something like this
 !IMAGE[codesnipmcp.png](instructions310568/codesnipmcp.png)
 
-5. [] Make sure to save all the files. Then, click the '**Run and Debug**' extension icon (fourth icon in the leftmost column). In the dropdown, select **"Debug (Edge)"**, or press **F5** on the keyboard.
+5. [] Make sure to **save** all the files. Then, click the '**Run and Debug**' extension icon (fourth icon in the leftmost column). In the dropdown, select **"Debug (Edge)"**, or press **F5** on the keyboard.
 
-> [!alert] You may be asked to terminate processes on ports to allow the debugger to run, click **Terminate**
+> [!alert] You may be asked to terminate processes on ports to allow the debugger to run, click **Terminate**. A popup may appear on the top of VSC, terminate all the listed processes.
 
-6. [ ] Input a new laptop order, then ask the agent +++can you get an update on my order?+++
-7. [ ] Your agent will call the MCP server with details about your order, and the MCP server will approve or deny. 
-8. [ ] Check the logs in VS Code and you should see the MCP server tools being cached for use during conversation, like this: 
+6. [ ] Create a new laptop request, then ask the agent +++Can you get an update on my order?+++
+7. [ ] Your agent will call the MCP server with details about your order, and the MCP server will approve or deny.
+!IMAGE[approval-screen.jpg](instructions310568/approval-screen.jpg) 
+8. [ ] Check the logs in VSC and you should see the MCP server tools being cached for use during conversation, like this: 
 
 !IMAGE[cached tools.png](instructions310568/cached tools.png)
 
-And just like that! You've sucessfully incorported MCP into your Tech Support Agent!
+And just like that! You've sucessfully converted your Tech Support Agent into an MCP Client and connected it to an MCP server!
 
 ---
-**Please proceed to the next section.** (Navigation aids are at bottom right)
+**Please proceed to the next section.** (Navigation aids are at the bottom right)
 ===
 
 ## Takeaways & Next Steps
 
-Congratulations on building your first agent with Teams AI Library!
+Congratulations on building your first agents with Teams AI Library!
 
 In this lab we've accomplished the following:
-1. Used the Teams CLI to build our own conversational agent in 30 seconds
+1. Used the Teams CLI to build our own conversational echo agent in 30 seconds
 2. Tested the agent by launching it directly on DevTools and Microsoft Teams
 3. Learned and explored the power of integrating Teams DevTools, Teams AI Library, M365 Agent Toolkit, and Azure AI Foundry
 4. Added AI Capabilities to our Tech Support Agent
-5. Integreated an MCP client into our Tech Support agent
+5. Converted our Tech Support Agent into an MCP Client
 ***
+
+We have officially GA'd with Typescript and .NET, and are in Public Preview for Python.
 
 Want to learn more and keep building? Here are further resources to look at:
 * [Teams AI Library Docs](https://microsoft.github.io/teams-ai/welcome/)
@@ -352,7 +378,4 @@ Want to learn more and keep building? Here are further resources to look at:
 * [Adaptive Cards](https://adaptivecards.microsoft.com/)
 
 ---
-**Please proceed to the End.** (Navigation aids are at bottom right)
-
-
 
