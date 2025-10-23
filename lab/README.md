@@ -1,4 +1,4 @@
-
+Lab Instructions
 ---
 # Create Your First Agent
 >  **Teams AI Library** is designed to enhance developer experience with streamlined integrations and accelerated workflows. 
