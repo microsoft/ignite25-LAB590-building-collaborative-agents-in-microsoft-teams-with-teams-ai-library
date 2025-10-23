@@ -29,9 +29,9 @@
 
 ## 🔥LAB590: Building collaborative agents in Microsoft Teams with Teams AI Library
 
-[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue)](https://aka.ms/foundry/forum)
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/Azure_AI_Foundry-Developer_Forum-blue)](https://aka.ms/foundry/forum)
 [![Microsoft Teams SDK - Typescript](https://img.shields.io/badge/Microsoft_Teams_SDK-Typescript-blue)](https://aka.ms/teamsai/typescript)
-[![Microsoft Teams SDK - C#](https://img.shields.io/badge/Microsoft_Teams_SDK-_C#-blue)](https://aka.ms/teamsai/csharp)
+[![Microsoft Teams SDK - C#](https://img.shields.io/badge/Microsoft_Teams_SDK-C_#-blue)](https://aka.ms/teamsai/csharp)
 [![Microsoft Teams SDK - Python](https://img.shields.io/badge/Microsoft_Teams_SDK-Python-blue)](https://aka.ms/teamsai/python)
 [![Microsft 365 Agents Toolkit](https://img.shields.io/badge/Microsoft_365_Agents_Toolkit-Overview-blue)](https://learn.microsoft.com/en-us/microsoft-365/developer/overview-m365-agents-toolkit)
 
