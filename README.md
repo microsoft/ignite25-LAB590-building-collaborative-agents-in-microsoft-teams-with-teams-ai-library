@@ -31,8 +31,8 @@
 
 [![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue)](https://aka.ms/foundry/forum)
 [![Microsoft Teams SDK - Typescript](https://img.shields.io/badge/Microsoft_Teams_SDK-Typescript-blue)](https://aka.ms/teamsai/typescript)
-[![Microsoft Teams SDK - C#](https://img.shields.io/badge/Microsoft_Teams_SDK-C#-blue)](https://aka.ms/teamsai/csharp)
-[![Microsoft Teams SDK - Python](https://img.shields.io/badge/Microsoft_Teams_SDK-Python-bluee)](https://aka.ms/teamsai/python)
+[![Microsoft Teams SDK - C#](https://img.shields.io/badge/Microsoft_Teams_SDK-_C#-blue)](https://aka.ms/teamsai/csharp)
+[![Microsoft Teams SDK - Python](https://img.shields.io/badge/Microsoft_Teams_SDK-Python-blue)](https://aka.ms/teamsai/python)
 [![Microsft 365 Agents Toolkit](https://img.shields.io/badge/Microsoft_365_Agents_Toolkit-Overview-blue)](https://learn.microsoft.com/en-us/microsoft-365/developer/overview-m365-agents-toolkit)
 
 ### Session Description
