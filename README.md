@@ -73,8 +73,6 @@ For more information, setup instructions for other dev clients, and to post comm
 "/><br />
         <sub><b>Prem Mathiyalagan
 </b></sub></a><br />
-           
-    </td>
 </tr></table>
 
 
