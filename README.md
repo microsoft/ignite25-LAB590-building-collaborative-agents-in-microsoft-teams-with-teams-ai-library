@@ -13,7 +13,7 @@
 
 ### Session Description
 
-You’ve built a great agent that your customers love—now it’s time to scale. By bringing your agent to Microsoft Teams with the Teams AI Library, you can reach 330 million users and unlock rich collaborative experiences across chats, meetings, and channels. 
+You’ve built a great agent that your customers love—now it’s time to scale. By bringing your agent to Microsoft Teams with the Teams SDK, you can reach 330 million users and unlock rich collaborative experiences across chats, meetings, and channels. 
  
 Whether you're an AI startup ready to engage enterprise customers or an internal team expanding productivity across your organization, this lab will show you how to migrate your agent from other platforms to Teams and tap into powerful new AI capabilities like agent-to-agent communication (A2A) and model context protocol (MCP). Empower your agent to thrive where your users already work—on Microsoft Teams.
 
@@ -21,7 +21,7 @@ Whether you're an AI startup ready to engage enterprise customers or an internal
 
 By the end of this session, learners will be able to:
 
-- Create an agent for Teams using the Teams CLI included in the Teams AI Library
+- Create an agent for Teams using the Teams CLI included in the Teams SDK
 - Become familiar with the debugging and developer tools available to test your agent
 - Deploy a new agent to Teams using the M365 Agents Toolkit
 - Setup and deploy AI resources with the Azure AI Foundry
@@ -29,7 +29,7 @@ By the end of this session, learners will be able to:
 
 ### 💻 Technologies Used
 
-1. Teams AI Library
+1. Teams SDK
 1. Azure AI Foundry
 1. M365 Agents Toolkit
 1. VS Code

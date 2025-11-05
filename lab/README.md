@@ -1,7 +1,7 @@
 Lab Instructions
 ---
 # Create Your First Agent
->  **Teams AI Library** is designed to enhance developer experience with streamlined integrations and accelerated workflows. 
+>  **Teams SDK** is designed to enhance developer experience with streamlined integrations and accelerated workflows. 
 
 ---
 ## Lab Overview
@@ -26,7 +26,7 @@ This lab is divided into 4 sections:
 **Please proceed to the next section.** (Navigation aids are at the bottom right)
 
 ---
->[!note] This lab is written in Typescript. No prior knowledge is needed. Teams AI Library is also available in .NET and Python. 
+>[!note] This lab is written in Typescript. No prior knowledge is needed. Teams SDK is also available in .NET and Python. 
 
 >[!help]**If you are stuck in any part of the lab, please raise your hand to ask a proctor for help.** 
 
@@ -108,7 +108,7 @@ Congrats, you just made your agent in 30 seconds! :tada:
 
 ## Exercise 2: Explore DevTools
 
-> One of the main motivations for Teams AI Library is to provide excellent tools that simplify and speed up building and testing agents. Because of this, we created the **CLI** for speedy agent initiation and project management, and **DevTools** as an accessible way to test your agent's behavior without jumping through deployment hoops. DevTools also provides crucial insight on activity payloads on the Activities page.
+> One of the main motivations for Teams SDK is to provide excellent tools that simplify and speed up building and testing agents. Because of this, we created the **CLI** for speedy agent initiation and project management, and **DevTools** as an accessible way to test your agent's behavior without jumping through deployment hoops. DevTools also provides crucial insight on activity payloads on the Activities page.
 
 > [!knowledge] The developer tools can be used to locally interact with an app to streamline the testing/development process, preventing you from needing to deploy/register the app or expose a public endpoint.
 
@@ -150,7 +150,7 @@ Today, we're going to be working with a **Tech Support Agent**.
 
 > The Tech Support Agent helps employees answer general tech-related questions and more importantly, help users order new laptops. Like most agents, intelligence is key here. The agent can recommend certain laptops based on user needs and help you place an order for a laptop all using conversational-based AI. This example uses a RAG service to store laptop information and uses that to help guide and place orders for users. 
 
->[!knowledge] The Tech Support agent is built with the Teams AI Library and shows how easy it is to use activity handlers, dialogs, adaptive cards, and AI to create a fun, interactive agent with just a few building blocks.
+>[!knowledge] The Tech Support agent is built with the Teams SDK and shows how easy it is to use activity handlers, dialogs, adaptive cards, and AI to create a fun, interactive agent with just a few building blocks.
 
 ### Step 1: Get your Azure AI Foundry Keys
 >[!knowledge] We will be using Azure AI Foundry to deploy an Azure OpenAI gpt-4o model.
@@ -360,12 +360,12 @@ And just like that! You've sucessfully converted your Tech Support Agent into an
 
 ## Takeaways & Next Steps
 
-Congratulations on building your first agents with Teams AI Library!
+Congratulations on building your first agents with Teams SDK!
 
 In this lab we've accomplished the following:
 1. Used the Teams CLI to build our own conversational echo agent in 30 seconds
 2. Tested the agent by launching it directly on DevTools and Microsoft Teams
-3. Learned and explored the power of integrating Teams DevTools, Teams AI Library, M365 Agent Toolkit, and Azure AI Foundry
+3. Learned and explored the power of integrating Teams DevTools, Teams SDK, M365 Agent Toolkit, and Azure AI Foundry
 4. Added AI Capabilities to our Tech Support Agent
 5. Converted our Tech Support Agent into an MCP Client
 ***
@@ -373,7 +373,7 @@ In this lab we've accomplished the following:
 We have officially GA'd with Typescript and .NET, and are in Public Preview for Python.
 
 Want to learn more and keep building? Here are further resources to look at:
-* [Teams AI Library Docs](https://microsoft.github.io/teams-ai/welcome/)
+* [Teams SDK Docs](https://microsoft.github.io/teams-sdk/welcome/)
 * [Teams AI Accelerator Templates](https://aka.ms/teams-templates-gallery)
 * [Adaptive Cards](https://adaptivecards.microsoft.com/)
 
