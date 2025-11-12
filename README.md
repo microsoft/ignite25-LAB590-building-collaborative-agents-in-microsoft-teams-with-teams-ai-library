@@ -49,7 +49,7 @@ For more information, setup instructions for other dev clients, and to post comm
 
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
-| Ignite 2025 Next Steps | [https://aka.ms/Ignite25-Next-Steps](https://aka.ms/Ignite25-Next-Steps?ocid=ignite25_nextsteps_cnl) | Next steps for your Ignite experience |
+| Ignite 2025 Next Steps | [https://aka.ms/Ignite25-Next-Steps](https://aka.ms/Ignite25-Next-Steps?ocid=ignite25_nextsteps_cnl) | Links to all repos for Ignite 2025 Sessions |
 | Azure AI Foundry Community Discord | [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://aka.ms/AIFoundryDiscord-Ignite25)| Connect with the Azure AI Foundry Community! |
 | Microsoft Teams SDK Learn Docs | [Microsoft Teams SDK Learn Docs](https://learn.microsoft.com/en-us/microsoftteams/platform/teams-ai-library/) | The official documenation page of the Microsoft Teams SDK |
 | Microsoft 365 Agents Toolkit | [Microsoft 365 Agents Toolkit Docs](https://learn.microsoft.com/en-us/microsoft-365/developer/overview-m365-agents-toolkit) | Check out the doc pages for Microsoft 365 Agents Toolkit |
