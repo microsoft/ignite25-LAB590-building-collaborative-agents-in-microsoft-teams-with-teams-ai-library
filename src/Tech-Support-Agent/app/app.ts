@@ -2,16 +2,25 @@ import { App } from '@microsoft/teams.apps';
 import { ChatPrompt } from '@microsoft/teams.ai';
 import { AzureOpenAIChatModelOptions, OpenAIChatModel } from '@microsoft/teams.openai';
 import { ConsoleLogger, LocalStorage } from '@microsoft/teams.common';
-import { DevtoolsPlugin } from '@microsoft/teams.dev';
-import { InvokeResponse, TaskModuleResponse } from '@microsoft/teams.api';
+import { InvokeResponse, TaskModuleResponse, TokenCredentials } from '@microsoft/teams.api';
 import { StorageState, LaptopOrder } from './interfaces';
 import { generateLaptopOrderDialogCard, generateSubmittedLaptopOrderCard, generateLaptopRequestCard, generateRequestConfirmationCard } from './cards';
 import { getLaptopOptions, getLaptopRecommendations, searchLaptops } from './storage';
 import { generateWelcomeCard } from './welcomeCard';
-import { McpClientPlugin } from '@microsoft/teams.mcpclient';
+import { ManagedIdentityCredential } from '@azure/identity';
+import * as fs from 'fs';
+import * as path from 'path';
+import config from "../config";
+//ADD MCP IMPORT STATEMENT HERE
 
 //Storage for current order and completed orders
 const storage = new LocalStorage<StorageState>();
+
+// Load instructions from file on initialization
+function loadInstructions(): string {
+  const instructionsFilePath = path.join(__dirname, "instructions.txt");
+  return fs.readFileSync(instructionsFilePath, 'utf-8').trim();
+}
 
 // Initialize storage only if it doesn't exist to preserve order state
 if (!storage.get('local')) {
@@ -21,9 +30,31 @@ if (!storage.get('local')) {
     } as StorageState);
 }
 
+const createTokenFactory = () => {
+  return async (scope: string | string[], tenantId?: string): Promise<string> => {
+    const managedIdentityCredential = new ManagedIdentityCredential({
+        clientId: process.env.CLIENT_ID
+      });
+    const scopes = Array.isArray(scope) ? scope : [scope];
+    const tokenResponse = await managedIdentityCredential.getToken(scopes, {
+      tenantId: tenantId
+    });
+   
+    return tokenResponse.token;
+  };
+};
+
+// Configure authentication using TokenCredentials
+const tokenCredentials: TokenCredentials = {
+  clientId: process.env.CLIENT_ID || '',
+  token: createTokenFactory()
+};
+
+const credentialOptions = config.MicrosoftAppType === "UserAssignedMsi" ? { ...tokenCredentials } : undefined;
+
 const app = new App({
+    ...credentialOptions,
     logger: new ConsoleLogger('@samples/echo', { level: 'debug' }),
-  plugins: [new DevtoolsPlugin()],
 });
 
 //Handle different dialog types
@@ -259,8 +290,8 @@ app.on('dialog.submit', async ({ activity, send }) => {
         }
     }
 });
-///ADD MCP
-const logger = new ConsoleLogger('mcp-client', {level: 'debug'});
+
+//ADD MCP LOGGER STATEMENT HERE
 const prompt = new ChatPrompt(
     {
         instructions: [
@@ -271,23 +302,22 @@ const prompt = new ChatPrompt(
             'When users ask about laptop specifications, available models, or what laptops are available, call the get_laptop_options function.',
             'When users want personalized laptop recommendations based on their use case, budget, or performance needs, call the recommend_laptops function.',
             'Be friendly and helpful. Never ask users to format their requests in a specific way - always use the appropriate function to show them the right form or information.',
-            'When users ask for a status update on their order, use the MCPclientplugin to send the price and date of the order to receieve approval or denial on the purchase.',
+            'When users ask for a status update on their order, use the MCPclientplugin to send the price and date of the order to receieve approval or denial on the purchase. Do not by any means infer approval or denial of the purchase, you must always submit the order to the MCP server for processing.',
             'On startup you will greet users friendly and ask them if they have any technical issues you can help them with or if they need to order a new laptop.',
         ].join('\n'),
         model: new OpenAIChatModel({
-            model: process.env.OPENAPI_MODEL,
-            apiKey: process.env.OPENAPI_KEY,
-            endpoint: process.env.OPENAPI_ENDPOINT!,
-            apiVersion: process.env.OPENAPI_VERSION,
+            model: 'gpt-4o',
+            apiKey: process.env.SECRET_AZURE_OPENAI_API_KEY,
+            endpoint: process.env.AZURE_OPENAI_ENDPOINT,
+            apiVersion: '2025-01-01-preview',
         } as AzureOpenAIChatModelOptions),
         
     },
-    [new McpClientPlugin({logger})],
-).usePlugin('mcpClient', {
-    url: process.env.MCP_CLIENT_URL!,
-  }
-    
-)
+) //REPLACE THIS ENTIRE LINE WITH MCP PLUGIN INITIALIZATION CODE
+
+//ADD MCP PLUGIN USAGE HERE
+
+
  // gets a list of the available laptop options   
     .function('get_laptop_options', 'Returns a list of the available laptop options and configurations', async () => {
         try {
@@ -388,6 +418,4 @@ const prompt = new ChatPrompt(
         return `💻 I'll help you request a new laptop! A form will appear where you can provide your business justification and select the type of request.`;
     });
 
-(async () => {
-    await app.start(+(process.env.PORT || 3000));
-})();
+export default app;
