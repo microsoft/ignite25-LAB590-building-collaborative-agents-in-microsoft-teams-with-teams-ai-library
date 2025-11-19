@@ -24,13 +24,13 @@ By the end of this session, learners will be able to:
 - Create an agent for Teams using the Teams CLI included in the Teams SDK
 - Become familiar with the debugging and developer tools available to test your agent
 - Deploy a new agent to Teams using the M365 Agents Toolkit
-- Setup and deploy AI resources with the Azure AI Foundry
+- Setup and deploy AI resources with Microsoft Foundry
 - Utilize advanced orchestration features like MCP
 
 ### 💻 Technologies Used
 
 1. Teams SDK
-1. Azure AI Foundry
+1. Microsoft Foundry
 1. M365 Agents Toolkit
 1. VS Code
 1. MCP
@@ -50,7 +50,7 @@ For more information, setup instructions for other dev clients, and to post comm
 | Resources          | Links                             | Description        |
 |:-------------------|:----------------------------------|:-------------------|
 | Ignite 2025 Next Steps | [https://aka.ms/Ignite25-Next-Steps](https://aka.ms/Ignite25-Next-Steps?ocid=ignite25_nextsteps_cnl) | Next steps for your Ignite experience |
-| Azure AI Foundry Community Discord | [![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://aka.ms/AIFoundryDiscord-Ignite25)| Connect with the Azure AI Foundry Community! |
+| Microsoft Foundry Community Discord | [![Microsoft Foundry Discord](https://dcbadge.limes.pink/api/server/nTYy5BXMWG)](https://aka.ms/MicrosoftFoundry-Ignite25)| Connect with the Microsoft Foundry Community! |
 | Microsoft Teams SDK Learn Docs | [Microsoft Teams SDK Learn Docs](https://learn.microsoft.com/en-us/microsoftteams/platform/teams-ai-library/) | The official documenation page of the Microsoft Teams SDK |
 | Microsoft 365 Agents Toolkit | [Microsoft 365 Agents Toolkit Docs](https://learn.microsoft.com/en-us/microsoft-365/developer/overview-m365-agents-toolkit) | Check out the doc pages for Microsoft 365 Agents Toolkit |
 | Unleashing the Power of MCP | [Unleashing the Power of MCP](https://techcommunity.microsoft.com/blog/educatordeveloperblog/unleashing-the-power-of-model-context-protocol-mcp-a-game-changer-in-ai-integrat/4397564) | Continue Learn more about MCP and how it can power your agents |
